@@ -13,6 +13,7 @@ body {
   background-color: black;
   color: white;
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* ================= NAVBAR ================= */
@@ -80,17 +81,19 @@ nav {
   line-height: 1.6;
 }
 
-.hero button {
+.hero-btn {
+  display: inline-block;
   padding: 10px 20px;
   background: hsl(193,100%,50%);
-  border: none;
   color: black;
   font-weight: bold;
+  text-decoration: none;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 5px;
 }
 
-.hero button:hover {
+.hero-btn:hover {
   opacity: 0.85;
   transform: scale(1.05);
 }
@@ -332,6 +335,5 @@ nav {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
+
