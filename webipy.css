@@ -22,8 +22,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 12px 25px;
-  background-color: #111;
-  border-bottom: 1px solid #222;
+  background-color: #222;
+  border-bottom: 1px solid #111;
 }
 
 .nav-left img#logo {
