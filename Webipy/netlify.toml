@@ -1,0 +1,18 @@
+# Static site on Netlify. The API lives on Render (set the URL in config.js).
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/post"
+  to = "/post.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post - Webipy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="webipy.css">
+</head>
+<body>
+
+  <nav>
+    <a class="brand" href="index.html"><img id="logo" src="webipy.jpg" alt=""><span>Webipy</span></a>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">☀️</button>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-right">
+      <a href="index.html#hero">Home</a>
+      <a href="works.html">Works</a>
+      <a href="pricing.html">Plans</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="main-heading">
+    <p class="eyebrow">Blog</p>
+    <h1 id="post-title">Loading…</h1>
+    <p id="post-meta" class="post-meta"></p>
+  </header>
+
+  <section class="post-section">
+    <article class="post-body" id="post-view"></article>
+    <p class="post-back"><a href="blog.html">← All posts</a></p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-about">
+        <a class="footer-brand" href="index.html">Webipy<span class="dot">.</span></a>
+        <p>We're a small studio in India building honest websites for local businesses.</p>
+        <p class="visit-counter" data-visit-counter hidden>Visitors: <span data-visit-count>—</span></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html#hero">Home</a>
+        <a href="works.html">Works</a>
+        <a href="blog.html">Blog</a>
+        <a href="pricing.html">Plans</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:webipy72025@gmail.com">webipy72025@gmail.com</a>
+        <a href="https://wa.me/919238831545" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/webi_py" target="_blank" rel="noopener">Instagram</a>
+        <span>India</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Webipy. All rights reserved.</span>
+      <span>Handmade in India</span>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="webipy.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>

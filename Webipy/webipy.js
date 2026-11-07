@@ -3,6 +3,7 @@
 
   const $ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   const $1 = (sel, ctx = document) => ctx.querySelector(sel);
+  const API_BASE = (window.WEBIPY_API_BASE || '').replace(/\/$/, '');
 
   const State = {
     theme: 'dark',
@@ -74,7 +75,6 @@
         this.burger?.addEventListener('click', () => this.toggleMenu());
         this.links.forEach(a => {
           a.addEventListener('click', () => this.closeMenu());
-          if (a.getAttribute('href').includes('appointment')) a.classList.add('nav-cta');
         });
         this.menu?.addEventListener('click', (e) => {
           if (e.target === this.menu) this.closeMenu();
@@ -469,6 +469,35 @@
       }
     },
 
+    VisitCounter: {
+      el: null,
+      init() {
+        this.el = $1('[data-visit-counter]');
+        if (!this.el) return;
+        this.load();
+      },
+      async load() {
+        const countEl = $1('[data-visit-count]', this.el);
+        if (!countEl) return;
+        try {
+          const isNewVisit = !sessionStorage.getItem('webipy_visit');
+          const res = await fetch(`${API_BASE}/api/visits`, {
+            method: isNewVisit ? 'POST' : 'GET',
+            headers: isNewVisit ? { 'Content-Type': 'application/json' } : undefined,
+            cache: 'no-store'
+          });
+          if (!res.ok) return;
+          const data = await res.json();
+          if (typeof data.count !== 'number') return;
+          if (isNewVisit) sessionStorage.setItem('webipy_visit', '1');
+          countEl.textContent = data.count.toLocaleString('en-IN');
+          this.el.hidden = false;
+        } catch (e) {
+          // Counter stays hidden when no backend is available (e.g. static hosting).
+        }
+      }
+    },
+
     ScrollSpy: {
       init() {
         const sections = $('section[id]');
@@ -508,6 +537,8 @@
       Components.BookingForm.init();
       Components.ImageLoader.init();
       Components.ScrollSpy.init();
+      Components.VisitCounter.init();
+      $('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
       this.bindGlobalEvents();
     },
     bindGlobalEvents() {

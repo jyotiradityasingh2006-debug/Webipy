@@ -1,0 +1,17 @@
+{
+  "name": "webipy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Webipy website with a blog, admin dashboard and visit counter (MongoDB + local JSON fallback)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
