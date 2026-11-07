@@ -1,0 +1,10 @@
+server.js
+package.json
+package-lock.json
+render.yaml
+netlify.toml
+README.md
+.env.example
+.gitignore
+.vercelignore
+data

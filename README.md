@@ -18,10 +18,10 @@ This is for our website, our original website
 
 Without `MONGODB_URI`, the server falls back to local JSON files in `data/`.
 
-## Netlify (static frontend only)
+## Vercel / Netlify (static frontend only)
 
-Netlify can't run `server.js`, so it hosts the pages while the API stays on Render:
+Vercel (and Netlify) can't run `server.js`, so they host the pages while the API stays on Render:
 
 1. In `config.js`, set `window.WEBIPY_API_BASE = "https://<your-service>.onrender.com";`.
-2. Set `CORS_ORIGIN` on Render to your Netlify URL.
-3. Deploy the repository. `netlify.toml` maps `/blog`, `/post`, `/admin` to the HTML pages.
+2. Set `CORS_ORIGIN` on Render to your Vercel URL (e.g. `https://your-site.vercel.app`), or leave it empty to allow any origin.
+3. Deploy the repository on Vercel. `vercel.json` enables clean URLs for `/blog`, `/post`, and `/admin`. `netlify.toml` does the same if you use Netlify instead.

@@ -1,6 +1,5 @@
 // Where the backend API lives.
-// Leave this empty when the site and API share a domain (e.g. the whole app
-// deployed on Render). If the static site is on Netlify and the API is on
-// Render, set the Render URL here:
+// The site on Vercel (or Netlify) is static, so set this to your Render URL:
 //   window.WEBIPY_API_BASE = "https://your-service.onrender.com";
+// Leave it empty only when pages and API share a domain (all on Render).
 window.WEBIPY_API_BASE = window.WEBIPY_API_BASE || "";
