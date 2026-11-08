@@ -443,7 +443,17 @@ function isBlockedPath(relative) {
 }
 
 function serveStatic(req, res, pathname) {
-  const relative = pathname === "/" ? "index.html" : (PRETTY_ROUTES[pathname] || pathname.replace(/^\/+/, ""));
+  let route = pathname;
+  if (route.length > 1) route = route.replace(/\/+$/, "");
+  let relative;
+  if (route === "/" || route === "") {
+    relative = "index.html";
+  } else if (PRETTY_ROUTES[route]) {
+    relative = PRETTY_ROUTES[route];
+  } else {
+    relative = route.replace(/^\/+/, "");
+    if (!path.extname(relative)) relative += ".html";
+  }
   if (isBlockedPath(relative)) return sendJson(res, 404, { error: "Not found" });
   const filePath = path.join(ROOT, relative);
   const rel = path.relative(ROOT, filePath);
