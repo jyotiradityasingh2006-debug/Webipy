@@ -45,7 +45,11 @@ const PRETTY_ROUTES = {
   "/post": "post.html"
 };
 
-fs.mkdirSync(DATA_DIR, { recursive: true });
+try {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+} catch (err) {
+  console.warn(`Could not create data directory: ${err.message}`);
+}
 
 /* ---------- helpers ---------- */
 
