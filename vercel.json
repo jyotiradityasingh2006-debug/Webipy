@@ -3,17 +3,7 @@
   "trailingSlash": false,
   "functions": {
     "server.js": {
-      "includeFiles": [
-        "*.html",
-        "*.css",
-        "*.js",
-        "*.jpg",
-        "*.png",
-        "*.svg",
-        "*.webp",
-        "*.ico",
-        "data/**"
-      ]
+      "includeFiles": "{*.html,*.css,*.js,*.jpg,*.png,*.svg,*.webp,*.ico,data/**}"
     }
   }
 }
